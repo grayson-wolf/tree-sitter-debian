@@ -27,13 +27,13 @@ enum ts_symbol_identifiers {
   sym_continuation_line = 5,
   sym_comment = 6,
   sym_source_file = 7,
-  sym_stanza = 8,
-  sym_field = 9,
-  sym_blank_line = 10,
+  sym_field = 8,
+  sym_blank_line = 9,
+  sym_stanza = 10,
   aux_sym_source_file_repeat1 = 11,
   aux_sym_source_file_repeat2 = 12,
-  aux_sym_stanza_repeat1 = 13,
-  aux_sym_field_repeat1 = 14,
+  aux_sym_field_repeat1 = 13,
+  aux_sym_stanza_repeat1 = 14,
 };
 
 static const char * const ts_symbol_names[] = {
@@ -45,13 +45,13 @@ static const char * const ts_symbol_names[] = {
   [sym_continuation_line] = "continuation_line",
   [sym_comment] = "comment",
   [sym_source_file] = "source_file",
-  [sym_stanza] = "stanza",
   [sym_field] = "field",
   [sym_blank_line] = "blank_line",
+  [sym_stanza] = "stanza",
   [aux_sym_source_file_repeat1] = "source_file_repeat1",
   [aux_sym_source_file_repeat2] = "source_file_repeat2",
-  [aux_sym_stanza_repeat1] = "stanza_repeat1",
   [aux_sym_field_repeat1] = "field_repeat1",
+  [aux_sym_stanza_repeat1] = "stanza_repeat1",
 };
 
 static const TSSymbol ts_symbol_map[] = {
@@ -63,13 +63,13 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_continuation_line] = sym_continuation_line,
   [sym_comment] = sym_comment,
   [sym_source_file] = sym_source_file,
-  [sym_stanza] = sym_stanza,
   [sym_field] = sym_field,
   [sym_blank_line] = sym_blank_line,
+  [sym_stanza] = sym_stanza,
   [aux_sym_source_file_repeat1] = aux_sym_source_file_repeat1,
   [aux_sym_source_file_repeat2] = aux_sym_source_file_repeat2,
-  [aux_sym_stanza_repeat1] = aux_sym_stanza_repeat1,
   [aux_sym_field_repeat1] = aux_sym_field_repeat1,
+  [aux_sym_stanza_repeat1] = aux_sym_stanza_repeat1,
 };
 
 static const TSSymbolMetadata ts_symbol_metadata[] = {
@@ -105,15 +105,15 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym_stanza] = {
-    .visible = true,
-    .named = true,
-  },
   [sym_field] = {
     .visible = true,
     .named = true,
   },
   [sym_blank_line] = {
+    .visible = true,
+    .named = true,
+  },
+  [sym_stanza] = {
     .visible = true,
     .named = true,
   },
@@ -125,11 +125,11 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
-  [aux_sym_stanza_repeat1] = {
+  [aux_sym_field_repeat1] = {
     .visible = false,
     .named = false,
   },
-  [aux_sym_field_repeat1] = {
+  [aux_sym_stanza_repeat1] = {
     .visible = false,
     .named = false,
   },
@@ -274,9 +274,9 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   },
   [STATE(1)] = {
     [sym_source_file] = STATE(24),
-    [sym_stanza] = STATE(16),
     [sym_field] = STATE(7),
     [sym_blank_line] = STATE(5),
+    [sym_stanza] = STATE(16),
     [aux_sym_source_file_repeat1] = STATE(5),
     [aux_sym_stanza_repeat1] = STATE(7),
     [aux_sym_field_token1] = ACTIONS(3),
@@ -284,9 +284,9 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(7),
   },
   [STATE(2)] = {
-    [sym_stanza] = STATE(22),
     [sym_field] = STATE(7),
     [sym_blank_line] = STATE(8),
+    [sym_stanza] = STATE(22),
     [aux_sym_source_file_repeat1] = STATE(8),
     [aux_sym_stanza_repeat1] = STATE(7),
     [ts_builtin_sym_end] = ACTIONS(9),
@@ -295,9 +295,9 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(7),
   },
   [STATE(3)] = {
-    [sym_stanza] = STATE(22),
     [sym_field] = STATE(7),
     [sym_blank_line] = STATE(8),
+    [sym_stanza] = STATE(22),
     [aux_sym_source_file_repeat1] = STATE(8),
     [aux_sym_stanza_repeat1] = STATE(7),
     [ts_builtin_sym_end] = ACTIONS(11),
@@ -306,9 +306,9 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(7),
   },
   [STATE(4)] = {
-    [sym_stanza] = STATE(22),
     [sym_field] = STATE(7),
     [sym_blank_line] = STATE(8),
+    [sym_stanza] = STATE(22),
     [aux_sym_source_file_repeat1] = STATE(8),
     [aux_sym_stanza_repeat1] = STATE(7),
     [ts_builtin_sym_end] = ACTIONS(13),
@@ -317,9 +317,9 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(7),
   },
   [STATE(5)] = {
-    [sym_stanza] = STATE(15),
     [sym_field] = STATE(7),
     [sym_blank_line] = STATE(8),
+    [sym_stanza] = STATE(15),
     [aux_sym_source_file_repeat1] = STATE(8),
     [aux_sym_stanza_repeat1] = STATE(7),
     [aux_sym_field_token1] = ACTIONS(3),
@@ -327,9 +327,9 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(7),
   },
   [STATE(6)] = {
-    [sym_stanza] = STATE(22),
     [sym_field] = STATE(7),
     [sym_blank_line] = STATE(8),
+    [sym_stanza] = STATE(22),
     [aux_sym_source_file_repeat1] = STATE(8),
     [aux_sym_stanza_repeat1] = STATE(7),
     [aux_sym_field_token1] = ACTIONS(3),

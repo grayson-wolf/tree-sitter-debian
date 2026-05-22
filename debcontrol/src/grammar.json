@@ -44,22 +44,6 @@
         }
       ]
     },
-    "stanza": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "field"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "comment"
-          }
-        ]
-      }
-    },
     "field": {
       "type": "SEQ",
       "members": [
@@ -108,13 +92,29 @@
       "type": "PATTERN",
       "value": "[ \\t][^\\n]*\\n"
     },
-    "comment": {
-      "type": "PATTERN",
-      "value": "#[^\\n]*\\n"
-    },
     "blank_line": {
       "type": "PATTERN",
       "value": "\\n"
+    },
+    "stanza": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "field"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        ]
+      }
+    },
+    "comment": {
+      "type": "PATTERN",
+      "value": "#[^\\n]*\\n"
     }
   },
   "extras": [],

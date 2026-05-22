@@ -44,13 +44,6 @@
         }
       ]
     },
-    "stanza": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "SYMBOL",
-        "name": "field"
-      }
-    },
     "field": {
       "type": "SEQ",
       "members": [
@@ -102,6 +95,13 @@
     "blank_line": {
       "type": "PATTERN",
       "value": "\\n"
+    },
+    "stanza": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "field"
+      }
     }
   },
   "extras": [],
