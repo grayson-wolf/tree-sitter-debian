@@ -1,0 +1,150 @@
+================================================================================
+Minimal copyright file
+================================================================================
+
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: *
+Copyright: 2020 John Doe
+License: MIT
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))))
+
+================================================================================
+Header with optional fields
+================================================================================
+
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Example Software
+Upstream-Contact: upstream@example.com
+Source: https://example.com/downloads
+
+Files: *
+Copyright: 2020 Upstream Author
+License: BSD-3-clause
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))))
+
+================================================================================
+Multiple files stanzas
+================================================================================
+
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: *
+Copyright: 2020 Upstream
+License: GPL-2+
+
+Files: debian/*
+Copyright: 2020 Packager
+License: GPL-2+
+
+Files: src/contrib/*
+Copyright: 2015 Contributor
+License: MIT
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))))
+
+================================================================================
+Stand-alone license stanza with full text
+================================================================================
+
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: *
+Copyright: 2020 Author
+License: MIT
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value)
+      (continuation_line)
+      (continuation_line)
+      (continuation_line)
+      (continuation_line)
+      (continuation_line))))
+
+================================================================================
+Multi-line copyright field
+================================================================================
+
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: *
+Copyright: 2008 John Smith
+           2009, 2010 Angela Watts
+License: GPL-3+
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value)
+      (continuation_line))
+    (field (field_name) (field_value))))

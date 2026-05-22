@@ -1,0 +1,114 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "debcopyright",
+  "rules": {
+    "source_file": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "blank_line"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "stanza"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "REPEAT1",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "blank_line"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "stanza"
+              }
+            ]
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "blank_line"
+          }
+        }
+      ]
+    },
+    "stanza": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "field"
+      }
+    },
+    "field": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "field_name"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "field_value"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\n"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "continuation_line"
+          }
+        }
+      ]
+    },
+    "field_name": {
+      "type": "PATTERN",
+      "value": "[!-9;-~][!-9;-~]*"
+    },
+    "field_value": {
+      "type": "PATTERN",
+      "value": "[^\\n]+"
+    },
+    "continuation_line": {
+      "type": "PATTERN",
+      "value": "[ \\t][^\\n]*\\n"
+    },
+    "blank_line": {
+      "type": "PATTERN",
+      "value": "\\n"
+    }
+  },
+  "extras": [],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": [],
+  "reserved": {}
+}

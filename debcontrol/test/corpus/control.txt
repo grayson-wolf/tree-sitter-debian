@@ -1,0 +1,177 @@
+================================================================================
+Simple source-only control file
+================================================================================
+
+Source: hello
+Maintainer: John Doe <john@example.com>
+Section: devel
+Priority: optional
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))))
+
+================================================================================
+Source and binary stanzas
+================================================================================
+
+Source: hello
+Maintainer: John Doe <john@example.com>
+
+Package: hello
+Architecture: any
+Description: A hello world package
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))))
+
+================================================================================
+Continuation lines (folded field)
+================================================================================
+
+Source: hello
+Build-Depends: debhelper-compat (= 13),
+ dh-python,
+ python3-all
+Maintainer: John Doe <john@example.com>
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value)
+      (continuation_line)
+      (continuation_line))
+    (field (field_name) (field_value))))
+
+================================================================================
+Multiline description
+================================================================================
+
+Source: hello
+Maintainer: John Doe <john@example.com>
+
+Package: hello
+Architecture: any
+Description: short description
+ Long description that spans multiple
+ lines and has a blank line:
+ .
+ After the blank line.
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value)
+      (continuation_line)
+      (continuation_line)
+      (continuation_line)
+      (continuation_line))))
+
+================================================================================
+Comments
+================================================================================
+
+# This is a comment
+Source: hello
+Maintainer: John Doe <john@example.com>
+# Another comment
+
+Package: hello
+Architecture: any
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (comment)
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (comment))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))))
+
+================================================================================
+Multiple binary stanzas
+================================================================================
+
+Source: mypackage
+Maintainer: Jane <jane@example.com>
+
+Package: mypackage
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Main package
+
+Package: mypackage-dev
+Architecture: any
+Depends: mypackage (= ${binary:Version})
+Description: Development files
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value)))
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))))
+
+================================================================================
+Empty field value
+================================================================================
+
+Source: hello
+Maintainer: John Doe <john@example.com>
+Description:
+ Just continuation lines.
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (blank_line)
+  (stanza
+    (field (field_name) (field_value))
+    (field (field_name) (field_value))
+    (field (field_name)
+      (continuation_line))))
