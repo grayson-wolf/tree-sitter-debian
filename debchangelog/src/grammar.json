@@ -1,0 +1,343 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "debchangelog",
+  "rules": {
+    "source_file": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\n"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "entry"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "comment"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "entry": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "header_line"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "change_line"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "blank_line"
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "footer_line"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "\\n"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "header_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "source_name"
+        },
+        {
+          "type": "STRING",
+          "value": " ("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "version"
+        },
+        {
+          "type": "STRING",
+          "value": ") "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "distributions"
+        },
+        {
+          "type": "STRING",
+          "value": "; "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "metadata"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\n"
+        }
+      ]
+    },
+    "source_name": {
+      "type": "PATTERN",
+      "value": "[a-z0-9][a-z0-9.+\\-]+"
+    },
+    "version": {
+      "type": "PATTERN",
+      "value": "[^\\n)]+"
+    },
+    "distributions": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_distribution"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": " "
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_distribution"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "_distribution": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "supported_distribution"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unsupported_distribution"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "other_distribution"
+        }
+      ]
+    },
+    "supported_distribution": {
+      "type": "PATTERN",
+      "value": "(oldstable|stable|testing|unstable|experimental|sid|rc-buggy|bookworm|trixie|forky|duke|jammy|noble|questing|resolute|stonking|devel)(-updates|-security|-proposed|-backports)?"
+    },
+    "unsupported_distribution": {
+      "type": "PATTERN",
+      "value": "(buzz|rex|bo|hamm|slink|potato|woody|sarge|etch|lenny|squeeze|wheezy|jessie|stretch|buster|bullseye|warty|hoary|breezy|dapper|edgy|feisty|gutsy|hardy|intrepid|jaunty|karmic|lucid|maverick|natty|oneiric|precise|quantal|raring|saucy|trusty|utopic|vivid|wily|xenial|yakkety|zesty|artful|bionic|cosmic|disco|eoan|focal|groovy|hirsute|impish|kinetic|lunar|mantic|oracular|plucky)(-updates|-security|-proposed|-backports)?"
+    },
+    "other_distribution": {
+      "type": "PATTERN",
+      "value": "UNRELEASED|[a-zA-Z][-a-zA-Z0-9]*"
+    },
+    "metadata": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "key_value_pair"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ", "
+              },
+              {
+                "type": "SYMBOL",
+                "name": "key_value_pair"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "key_value_pair": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "metadata_key"
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "metadata_value"
+        }
+      ]
+    },
+    "metadata_key": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z][-a-zA-Z0-9]*"
+    },
+    "metadata_value": {
+      "type": "PATTERN",
+      "value": "[^,\\n]+"
+    },
+    "change_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "  "
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_change_body"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\n"
+        }
+      ]
+    },
+    "_change_body": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "closes"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "launchpad_bug"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_change_text"
+          }
+        ]
+      }
+    },
+    "closes": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "[Cc]loses:\\s*(?:bug)?#?\\s*\\d+(?:,\\s*(?:bug)?#?\\s*\\d+)*"
+        }
+      }
+    },
+    "launchpad_bug": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "LP:\\s*#\\d+(?:,\\s*#\\d+)*"
+        }
+      }
+    },
+    "_change_text": {
+      "type": "PATTERN",
+      "value": "[^\\n(CcLl]+|[(CcLl]"
+    },
+    "footer_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": " -- "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "maintainer"
+        },
+        {
+          "type": "STRING",
+          "value": "  "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "date"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\n"
+        }
+      ]
+    },
+    "maintainer": {
+      "type": "PATTERN",
+      "value": "[^<]+<[^>]+>"
+    },
+    "date": {
+      "type": "PATTERN",
+      "value": "[^\\n]+"
+    },
+    "comment": {
+      "type": "PATTERN",
+      "value": "#[^\\n]*\\n"
+    },
+    "blank_line": {
+      "type": "PATTERN",
+      "value": "\\n"
+    }
+  },
+  "extras": [],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": [],
+  "reserved": {}
+}

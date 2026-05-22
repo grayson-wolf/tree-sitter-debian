@@ -1,0 +1,337 @@
+================================================================================
+Simple changelog entry
+================================================================================
+
+bash (5.3-2) unstable; urgency=medium
+
+  * Apply upstream patches 004 - 009.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 13 Feb 2026 11:43:30 +0100
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (entry
+    (header_line
+      (source_name)
+      (version)
+      (distributions
+        (supported_distribution))
+      (metadata
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))))
+    (blank_line)
+    (change_line)
+    (blank_line)
+    (footer_line
+      (maintainer)
+      (date))))
+
+================================================================================
+Ubuntu with pocket
+================================================================================
+
+bash (5.3-2ubuntu1) noble-updates; urgency=high
+
+  * Fix critical bug
+
+ -- Dev <dev@ubuntu.com>  Mon, 01 Jan 2024 00:00:00 +0000
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (entry
+    (header_line
+      (source_name)
+      (version)
+      (distributions
+        (supported_distribution))
+      (metadata
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))))
+    (blank_line)
+    (change_line)
+    (blank_line)
+    (footer_line
+      (maintainer)
+      (date))))
+
+================================================================================
+Unsupported distribution
+================================================================================
+
+pkg (1.0-1) xenial; urgency=low
+
+  * Old release
+
+ -- Dev <dev@example.com>  Mon, 01 Jan 2018 00:00:00 +0000
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (entry
+    (header_line
+      (source_name)
+      (version)
+      (distributions
+        (unsupported_distribution))
+      (metadata
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))))
+    (blank_line)
+    (change_line)
+    (blank_line)
+    (footer_line
+      (maintainer)
+      (date))))
+
+================================================================================
+UNRELEASED
+================================================================================
+
+pkg (2.0-1) UNRELEASED; urgency=low
+
+  * Work in progress
+
+ -- Dev <dev@example.com>  Mon, 01 Jan 2024 00:00:00 +0000
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (entry
+    (header_line
+      (source_name)
+      (version)
+      (distributions
+        (other_distribution))
+      (metadata
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))))
+    (blank_line)
+    (change_line)
+    (blank_line)
+    (footer_line
+      (maintainer)
+      (date))))
+
+================================================================================
+Bug closures
+================================================================================
+
+pkg (1.0-2) unstable; urgency=medium
+
+  * Fix issue (Closes: #12345)
+  * Another fix (Closes: #111, #222)
+
+ -- Dev <dev@example.com>  Mon, 01 Jan 2024 00:00:00 +0000
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (entry
+    (header_line
+      (source_name)
+      (version)
+      (distributions
+        (supported_distribution))
+      (metadata
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))))
+    (blank_line)
+    (change_line
+      (closes))
+    (change_line
+      (closes))
+    (blank_line)
+    (footer_line
+      (maintainer)
+      (date))))
+
+================================================================================
+Launchpad bugs
+================================================================================
+
+pkg (1.0-1ubuntu1) noble; urgency=medium
+
+  * Fix issue (LP: #67890)
+  * Multiple bugs (LP: #111, #222)
+
+ -- Dev <dev@ubuntu.com>  Mon, 01 Jan 2024 00:00:00 +0000
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (entry
+    (header_line
+      (source_name)
+      (version)
+      (distributions
+        (supported_distribution))
+      (metadata
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))))
+    (blank_line)
+    (change_line
+      (launchpad_bug))
+    (change_line
+      (launchpad_bug))
+    (blank_line)
+    (footer_line
+      (maintainer)
+      (date))))
+
+================================================================================
+Multiple entries
+================================================================================
+
+pkg (2.0-1) testing; urgency=low
+
+  * New upstream release
+
+ -- Dev <dev@example.com>  Tue, 02 Feb 2024 00:00:00 +0000
+
+pkg (1.0-1) stable; urgency=medium
+
+  * Initial release
+
+ -- Dev <dev@example.com>  Mon, 01 Jan 2024 00:00:00 +0000
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (entry
+    (header_line
+      (source_name)
+      (version)
+      (distributions
+        (supported_distribution))
+      (metadata
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))))
+    (blank_line)
+    (change_line)
+    (blank_line)
+    (footer_line
+      (maintainer)
+      (date)))
+  (entry
+    (header_line
+      (source_name)
+      (version)
+      (distributions
+        (supported_distribution))
+      (metadata
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))))
+    (blank_line)
+    (change_line)
+    (blank_line)
+    (footer_line
+      (maintainer)
+      (date))))
+
+================================================================================
+Multiple metadata fields
+================================================================================
+
+pkg (1.0-1+b1) unstable; urgency=low, binary-only=yes
+
+  * Binary-only NMU
+
+ -- Dev <dev@example.com>  Mon, 01 Jan 2024 00:00:00 +0000
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (entry
+    (header_line
+      (source_name)
+      (version)
+      (distributions
+        (supported_distribution))
+      (metadata
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))))
+    (blank_line)
+    (change_line)
+    (blank_line)
+    (footer_line
+      (maintainer)
+      (date))))
+
+================================================================================
+Ubuntu pocket variants
+================================================================================
+
+pkg (1.0) noble-security; urgency=high
+
+  * Security fix
+
+ -- Dev <dev@ubuntu.com>  Mon, 01 Jan 2024 00:00:00 +0000
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (entry
+    (header_line
+      (source_name)
+      (version)
+      (distributions
+        (supported_distribution))
+      (metadata
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))))
+    (blank_line)
+    (change_line)
+    (blank_line)
+    (footer_line
+      (maintainer)
+      (date))))
+
+================================================================================
+Trailing comments
+================================================================================
+
+pkg (1.0-1) stable; urgency=low
+
+  * Release
+
+ -- Dev <dev@example.com>  Mon, 01 Jan 2024 00:00:00 +0000
+
+# Older entries have been removed from this changelog.
+# To read the complete changelog use `apt changelog pkg`.
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (entry
+    (header_line
+      (source_name)
+      (version)
+      (distributions
+        (supported_distribution))
+      (metadata
+        (key_value_pair
+          (metadata_key)
+          (metadata_value))))
+    (blank_line)
+    (change_line)
+    (blank_line)
+    (footer_line
+      (maintainer)
+      (date)))
+  (comment)
+  (comment))

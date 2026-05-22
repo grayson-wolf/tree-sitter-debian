@@ -1,0 +1,256 @@
+[
+  {
+    "type": "blank_line",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "change_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "closes",
+          "named": true
+        },
+        {
+          "type": "launchpad_bug",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "distributions",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "other_distribution",
+          "named": true
+        },
+        {
+          "type": "supported_distribution",
+          "named": true
+        },
+        {
+          "type": "unsupported_distribution",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "entry",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "blank_line",
+          "named": true
+        },
+        {
+          "type": "change_line",
+          "named": true
+        },
+        {
+          "type": "footer_line",
+          "named": true
+        },
+        {
+          "type": "header_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "footer_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "maintainer",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "header_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "distributions",
+          "named": true
+        },
+        {
+          "type": "metadata",
+          "named": true
+        },
+        {
+          "type": "source_name",
+          "named": true
+        },
+        {
+          "type": "version",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "key_value_pair",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "metadata_key",
+          "named": true
+        },
+        {
+          "type": "metadata_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "metadata",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "key_value_pair",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "entry",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": " ",
+    "named": false
+  },
+  {
+    "type": "  ",
+    "named": false
+  },
+  {
+    "type": " (",
+    "named": false
+  },
+  {
+    "type": " -- ",
+    "named": false
+  },
+  {
+    "type": ") ",
+    "named": false
+  },
+  {
+    "type": ", ",
+    "named": false
+  },
+  {
+    "type": "; ",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "closes",
+    "named": true
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "date",
+    "named": true
+  },
+  {
+    "type": "launchpad_bug",
+    "named": true
+  },
+  {
+    "type": "maintainer",
+    "named": true
+  },
+  {
+    "type": "metadata_key",
+    "named": true
+  },
+  {
+    "type": "metadata_value",
+    "named": true
+  },
+  {
+    "type": "other_distribution",
+    "named": true
+  },
+  {
+    "type": "source_name",
+    "named": true
+  },
+  {
+    "type": "supported_distribution",
+    "named": true
+  },
+  {
+    "type": "unsupported_distribution",
+    "named": true
+  },
+  {
+    "type": "version",
+    "named": true
+  }
+]
