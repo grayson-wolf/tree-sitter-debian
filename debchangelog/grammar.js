@@ -15,7 +15,7 @@ const DEBIAN_SUPPORTED = [
 
 // Ubuntu supported versions
 const UBUNTU_SUPPORTED = [
-  'jammy', 'noble', 'questing', 'resolute', 'stonking',
+  'jammy', 'noble', 'questing', 'resolute', 'stonking', 'tenacious'
   'devel',
 ];
 
